@@ -8,7 +8,7 @@
 /*** 1. GLOBAL ***/
 
 /* Reset / Normalize
-  ============================= */
+============================= */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -159,7 +159,7 @@ template {
 }
 
 /* Variables
-    ============================= */
+============================= */
 
 :root {
   --color-primary: #d73953;
@@ -242,7 +242,7 @@ template {
 }
 
 /* Base
-        ============================= */
+  ============================= */
 
 *,
 *:before,
@@ -319,7 +319,7 @@ a:active {
 }
 
 /* Helpers
-        ============================= */
+  ============================= */
 
 .visually-hidden:not(:focus):not(:active) {
   position: absolute !important;
@@ -329,7 +329,6 @@ a:active {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
 }
-
 main img {
   width: 100%;
   height: auto;
@@ -338,16 +337,16 @@ main img {
 /*** 2. LAYOUT ***/
 
 /* Layout
-        ============================= */
+  ============================= */
 
 .container {
-  width: max-width;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Grid
-        ============================= */
+  ============================= */
 
 ul.row {
   margin: -1rem;
@@ -370,31 +369,28 @@ ul.row {
 .col-1-2 {
   width: calc((100% / 2) - 2rem);
 }
-
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   :root {
     --section-padding: 5rem 1.5rem;
     --section-body-padding: 2rem 0 0;
   }
-
   ul.row,
   .row {
     flex-direction: column;
     margin: 0;
   }
-
+  /* Target all classes starting with col- */
   [class^="col-"] {
     margin: 0 0 3rem 0;
   }
-
+  /* Target col-1-3 and col-1-2 classes */
   .col-1-3,
   .col-1-2 {
     width: 100%;
   }
 }
-
 /* Navbar
-        ============================= */
+  ============================= */
 
 .nav {
   margin: 0;
@@ -441,26 +437,26 @@ ul.row {
   background-color: var(--color-primary);
   width: 100%;
 }
-
-.navbar-menu {
-  flex: 1;
-  display: none;
-}
-.header .nav {
-  flex-direction: column;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.2s ease-out;
-}
-
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
+  .navbar-menu {
+    display: none;
+  }
   :root {
     --nav-item-margin: 0;
+  }
+  .navbar-menu {
+    flex: 1;
+  }
+  header .nav {
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
   }
 }
 
 /* Header
-        ============================= */
+  ============================= */
 
 .header {
   padding: var(--header-padding);
@@ -476,7 +472,7 @@ ul.row {
 }
 
 /* Footer
-        ============================= */
+  ============================= */
 
 .footer {
   --nav-item-font-weight: normal;
@@ -509,7 +505,7 @@ ul.row {
 /*** 3. SECTION ***/
 
 /* Section (all styles)
-        ============================= */
+  ============================= */
 
 .section {
   padding: var(--section-padding);
@@ -546,7 +542,7 @@ ul.row {
 }
 
 /* Section theming
-        ============================= */
+  ============================= */
 
 [data-section-theme="dark"] {
   --button-color: var(--color-white);
@@ -556,7 +552,7 @@ ul.row {
 }
 
 /* Section HERO
-        ============================= */
+  ============================= */
 
 .section-hero {
   position: relative;
@@ -588,15 +584,14 @@ ul.row {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  min-height: 35vh;
+  min-height: 35vh; /*this code cuts off part of the laptop in the image in my screen. perfectf for me is 45vh*/
 }
 /* Section Latest news
-        ============================= */
+  ============================= */
 
 .section-latest-news .row {
   flex-direction: row-reverse;
 }
-
 @media (max-width: 767px) {
   .section-latest-news .row {
     flex-direction: column;
@@ -604,14 +599,14 @@ ul.row {
 }
 
 /* Section SERVICES
-        ============================= */
+  ============================= */
 
 .section-services .row {
   flex-wrap: wrap;
 }
 
 /* Section ABOUT US
-        ============================= */
+  ============================= */
 
 .section-about-us [class*="col-"] {
   align-self: center;
@@ -620,14 +615,14 @@ ul.row {
 /*** 4. CARD ***/
 
 /* Card (all styles)
-        ============================= */
+  ============================= */
 
 .card-category {
   color: var(--color-primary);
 }
 
 /* Card WORK
-        ============================= */
+  ============================= */
 
 .card-work .card-outer {
   position: relative;
@@ -692,7 +687,7 @@ ul.row {
 }
 
 /* Card SERVICES
-        ============================= */
+  ============================= */
 
 .card-services .card-title {
   margin: 0;
@@ -713,7 +708,7 @@ ul.row {
 }
 
 /* Card TESTIMONIAL
-        ============================= */
+  ============================= */
 
 .card-testimonial {
   text-align: center;
@@ -748,7 +743,7 @@ ul.row {
 /*** ARTICLE PAGE ***/
 
 /* Section HERO (article)
-        ============================= */
+  ============================= */
 
 .hero-article {
   background-size: 150rem 100rem;
@@ -783,7 +778,7 @@ ul.row {
 }
 
 /* Post
-        ============================= */
+  ============================= */
 
 .post {
   display: flex;
@@ -818,7 +813,7 @@ ul.row {
 }
 
 /* Post Meta
-        ============================= */
+  ============================= */
 
 .post-meta-list {
   flex-direction: column;
@@ -845,7 +840,7 @@ ul.row {
 }
 
 /* Tag list
-        ============================= */
+  ============================= */
 
 .tag-list {
   padding: 0;
@@ -867,7 +862,7 @@ ul.row {
 /*** FORM ***/
 
 /* Comment section
-        ============================= */
+  ============================= */
 
 .post-comments {
   width: 80%;
@@ -880,7 +875,7 @@ ul.row {
 }
 
 /* Basic form
-        ============================= */
+  ============================= */
 
 form {
   display: flex;
@@ -935,7 +930,7 @@ textarea:focus {
 }
 
 /* Form group
-        ============================= */
+  ============================= */
 
 .form-group {
   padding: 1rem;
@@ -949,7 +944,7 @@ textarea:focus {
 }
 
 /* Form field
-        ============================= */
+  ============================= */
 
 .form-field-container {
   position: relative;
@@ -960,7 +955,7 @@ textarea:focus {
 }
 
 /* Form help
-        ============================= */
+  ============================= */
 
 .form-group .form-help {
   margin: 0;
@@ -979,7 +974,7 @@ textarea:focus {
 }
 
 /* Form error handling
-        ============================= */
+  ============================= */
 
 input:not(:placeholder-shown) ~ .form-field-icon::after {
   height: 100%;
